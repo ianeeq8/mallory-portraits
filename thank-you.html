@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You | Mallory Portraits</title>
+<meta name="robots" content="noindex">
+
+<!-- Thank-you page. In GHL: 1-column row (text) + 3-column row (images). -->
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --ink:#101215;--slate:#191C21;--ivory:#F1ECE3;--paper:#FAF8F3;
+  --brass:#B08B4F;--stone:#8A8378;
+  --display:'Cormorant Garamond',Georgia,serif;
+  --body:'Jost','Helvetica Neue',Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--body);font-weight:300;background:var(--ink);color:var(--ivory);line-height:1.7}
+img{display:block;width:100%;height:auto}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+
+.topbar{border-bottom:1px solid rgba(241,236,227,.12);padding:20px 0}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{font-family:var(--display);font-size:23px;letter-spacing:.16em;text-transform:uppercase}
+.brand span{display:block;font-family:var(--body);font-size:9px;letter-spacing:.34em;color:var(--brass);margin-top:5px}
+.topbar a.phone{font-size:12px;letter-spacing:.18em;text-decoration:none}
+.topbar a.phone:hover{color:var(--brass)}
+
+.hero{padding:120px 0 90px;text-align:center}
+.eyebrow{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--brass);margin-bottom:26px}
+h1{font-family:var(--display);font-weight:300;font-size:clamp(38px,5vw,60px);line-height:1.12}
+.rule{width:46px;height:1px;background:var(--brass);margin:34px auto}
+p{font-size:18px;color:#CFC9BF;max-width:60ch;margin:0 auto 20px}
+.next{font-family:var(--display);font-style:italic;font-size:22px;color:var(--ivory)}
+
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;padding-bottom:100px}
+.frame{background:var(--ivory);padding:14px;box-shadow:0 24px 60px rgba(0,0,0,.45)}
+.frame-inner{border:1px solid rgba(176,139,79,.55);padding:8px;background:var(--ivory)}
+
+footer{background:var(--slate);padding:56px 0 40px;text-align:center}
+footer .brand{margin-bottom:22px}
+footer p{font-size:14px;margin-bottom:8px}
+footer a{color:var(--brass);text-decoration:none}
+.credit{margin-top:38px;padding-top:26px;border-top:1px solid rgba(241,236,227,.12);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#6E6960}
+
+@media (max-width:900px){.gallery{grid-template-columns:1fr 1fr;gap:20px}.hero{padding:80px 0 60px}}
+@media (max-width:560px){
+  .wrap{padding:0 20px}
+  .gallery{grid-template-columns:1fr}
+  .topbar .wrap{flex-direction:column;text-align:center;gap:12px}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a href="index.html" style="text-decoration:none"><div class="brand">Mallory Portraits<span>Portsmouth, New Hampshire</span></div></a>
+    <a class="phone" href="tel:16035702600">603-570-2600</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Request received</div>
+    <h1>Thank you for your interest.</h1>
+    <div class="rule"></div>
+    <p class="next">A member of our team will reach out within 24 hours to go over your family portrait experience.</p>
+    <p>In the meantime, here are a few families we've had the privilege of photographing.</p>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="gallery">
+    <div class="frame"><div class="frame-inner"><img src="images/gallery-05-holiday.jpg" alt="A family of four in the studio"></div></div>
+    <div class="frame"><div class="frame-inner"><img src="images/gallery-06-denim.jpg" alt="Parents with their baby daughter"></div></div>
+    <div class="frame"><div class="frame-inner"><img src="images/gallery-04-siblings.jpg" alt="Two young siblings on a velvet chair"></div></div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="brand">Mallory Portraits<span>Heirloom family portraiture</span></div>
+    <p>110 Brewery Lane, Suite 101, Portsmouth, NH 03801</p>
+    <p><a href="tel:16035702600">603-570-2600</a></p>
+    <div class="credit">Built by Builders of Authority</div>
+  </div>
+</footer>
+
+</body>
+</html>

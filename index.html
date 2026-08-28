@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mallory Portraits | Heirloom Family Portraits in Portsmouth, NH</title>
+<meta name="description" content="Private, luxury family portrait sessions in Portsmouth, New Hampshire. Heirloom artwork created for your walls, not your camera roll. Serving families since 2011.">
+
+<!-- ============================================================
+     MALLORY PORTRAITS - LANDING PAGE
+     Built by Builders of Authority (BOA)
+
+     GHL REBUILD MAP (every section is a plain row/column stack):
+       Section 1  Hero .............. 2-column row (text | image)
+       Section 2  The years ......... 1-column row + 3-column stat row
+       Section 3  The experience .... 3-column row
+       Section 4  Generations ....... 2-column row (image | text)
+       Section 5  Get in the frame .. 2-column row (text | image)
+       Section 6  Gallery ........... 3-column row x 3
+       Section 7  Reviews ........... 3-column row
+       Section 8  CTA + form ........ 1-column row, form centered
+       Footer ..................... 1-column row
+     No custom JS is required in GHL. Swap the form for a native
+     GHL form and set its redirect to the thank-you page.
+     ============================================================ -->
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --ink:#101215;
+  --slate:#191C21;
+  --ivory:#F1ECE3;
+  --paper:#FAF8F3;
+  --brass:#B08B4F;
+  --stone:#8A8378;
+  --display:'Cormorant Garamond', Georgia, serif;
+  --body:'Jost', 'Helvetica Neue', Arial, sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--body);
+  font-weight:300;
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;width:100%;height:auto}
+a{color:inherit}
+
+/* ---------- shared ---------- */
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+.section{padding:110px 0}
+.section-dark{background:var(--ink);color:var(--ivory)}
+.section-light{background:var(--paper);color:var(--ink)}
+.section-ivory{background:var(--ivory);color:var(--ink)}
+
+.eyebrow{
+  font-size:11px;letter-spacing:.28em;text-transform:uppercase;
+  font-weight:400;color:var(--brass);margin-bottom:26px;
+}
+h1,h2,h3{font-family:var(--display);font-weight:300;line-height:1.12;letter-spacing:.005em}
+h1{font-size:clamp(42px,5.6vw,68px)}
+h2{font-size:clamp(32px,4vw,50px)}
+h3{font-size:24px}
+p{margin-bottom:20px;font-size:17px;max-width:62ch}
+.lead{font-size:20px;line-height:1.6}
+.section-dark p{color:#CFC9BF}
+.center{text-align:center}
+.center p{margin-left:auto;margin-right:auto}
+.rule{width:46px;height:1px;background:var(--brass);margin:34px auto}
+
+.btn{
+  display:inline-block;font-family:var(--body);font-size:12px;font-weight:400;
+  letter-spacing:.22em;text-transform:uppercase;text-decoration:none;
+  padding:20px 42px;background:var(--brass);color:#12140F;
+  border:1px solid var(--brass);transition:background .25s,color .25s;
+}
+.btn:hover,.btn:focus{background:transparent;color:var(--brass)}
+.section-light .btn:hover,.section-ivory .btn:hover{color:#7A5F2E;border-color:#7A5F2E}
+.note{font-size:13px;letter-spacing:.06em;color:var(--stone);margin-top:20px}
+
+/* ---------- signature: the mat + frame ---------- */
+/* Every portrait is presented matted and framed, the way it would
+   hang on a wall. This is the one flourish on the page. */
+.frame{background:var(--ivory);padding:20px;box-shadow:0 24px 60px rgba(0,0,0,.45)}
+.frame-inner{border:1px solid rgba(176,139,79,.55);padding:12px;background:var(--ivory)}
+.section-light .frame,.section-ivory .frame{box-shadow:0 18px 44px rgba(16,18,21,.16)}
+.section-ivory .frame{background:var(--paper)}
+.section-ivory .frame-inner{background:var(--paper)}
+.caption{
+  font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--stone);margin-top:14px;text-align:center;
+}
+
+/* ---------- top bar ---------- */
+.topbar{background:var(--ink);border-bottom:1px solid rgba(241,236,227,.12);padding:20px 0}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{font-family:var(--display);font-size:23px;letter-spacing:.16em;text-transform:uppercase;color:var(--ivory)}
+.brand span{display:block;font-family:var(--body);font-size:9px;letter-spacing:.34em;color:var(--brass);margin-top:5px}
+.topbar a.phone{font-size:12px;letter-spacing:.18em;color:var(--ivory);text-decoration:none}
+.topbar a.phone:hover{color:var(--brass)}
+
+/* ---------- 2-column row ---------- */
+.row-2{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.row-3{display:grid;grid-template-columns:repeat(3,1fr);gap:52px}
+
+/* ---------- hero ---------- */
+.hero{background:var(--ink);color:var(--ivory);padding:100px 0 110px}
+.hero h1{margin-bottom:26px}
+.hero .sub{font-size:21px;font-family:var(--display);font-style:italic;color:var(--ivory);margin-bottom:24px}
+.hero .meta{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--stone);margin-top:26px}
+
+/* ---------- stats ---------- */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:70px;text-align:center}
+.stat .num{font-family:var(--display);font-size:46px;line-height:1;color:var(--brass)}
+.stat .lbl{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--stone);margin-top:12px}
+
+/* ---------- steps ---------- */
+.step .n{
+  font-family:var(--display);font-size:15px;letter-spacing:.2em;color:var(--brass);
+  padding-bottom:16px;border-bottom:1px solid rgba(176,139,79,.4);margin-bottom:22px;display:block;
+}
+.step h3{margin-bottom:14px}
+.step p{font-size:16px}
+.pull{font-family:var(--display);font-style:italic;font-size:19px;color:var(--ivory)}
+
+/* ---------- gallery ---------- */
+/* Columns rather than a grid, so portrait and landscape portraits
+   hang flush the way they would on a real wall. In GHL: one 3-column
+   row, three images stacked inside each column. */
+.gallery{column-count:3;column-gap:30px;margin-top:56px}
+.gallery .frame{padding:14px;margin-bottom:30px;break-inside:avoid;-webkit-column-break-inside:avoid}
+.gallery .frame-inner{padding:8px}
+
+/* ---------- reviews ---------- */
+.review{border-top:1px solid rgba(176,139,79,.45);padding-top:26px}
+.review .stars{color:var(--brass);letter-spacing:.3em;font-size:12px;margin-bottom:18px}
+.review q{font-family:var(--display);font-size:20px;line-height:1.5;font-style:italic;display:block;margin-bottom:18px}
+.review .who{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--stone)}
+
+/* ---------- form ---------- */
+.form-card{max-width:560px;margin:44px auto 0;text-align:left}
+.field{margin-bottom:22px}
+.field label{display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--stone);margin-bottom:9px}
+.field input{
+  width:100%;padding:15px 16px;font-family:var(--body);font-size:16px;font-weight:300;
+  color:var(--ivory);background:transparent;border:1px solid rgba(241,236,227,.25);border-radius:0;
+}
+.field input:focus{outline:none;border-color:var(--brass)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.form-card .btn{width:100%;text-align:center;cursor:pointer;font-family:var(--body)}
+
+/* ---------- footer ---------- */
+footer{background:var(--slate);color:var(--ivory);padding:64px 0 40px;text-align:center}
+footer .brand{margin-bottom:22px}
+footer p{font-size:14px;color:#B9B3A8;margin:0 auto 8px;max-width:none}
+footer a{color:var(--brass);text-decoration:none}
+.credit{margin-top:38px;padding-top:26px;border-top:1px solid rgba(241,236,227,.12);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#6E6960}
+
+/* ---------- responsive ---------- */
+@media (max-width:900px){
+  .section{padding:74px 0}
+  .row-2,.row-3{grid-template-columns:1fr;gap:44px}
+  .gallery{column-count:2;column-gap:22px}
+  .stats{grid-template-columns:1fr;gap:34px}
+  .row-2.flip .col-img{order:-1}
+}
+@media (max-width:560px){
+  .wrap{padding:0 20px}
+  .two{grid-template-columns:1fr}
+  .topbar .wrap{flex-direction:column;text-align:center;gap:12px}
+  .gallery{column-count:1}
+  p{font-size:16px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<!-- ============ TOP BAR ============ -->
+<header class="topbar">
+  <div class="wrap">
+    <div class="brand">Mallory Portraits<span>Portsmouth, New Hampshire</span></div>
+    <a class="phone" href="tel:16035702600">603-570-2600</a>
+  </div>
+</header>
+
+<!-- ============ 1. HERO ============ -->
+<section class="hero">
+  <div class="wrap row-2">
+    <div>
+      <div class="eyebrow">Family portraits &middot; By appointment</div>
+      <h1>Your family deserves more than photos on a phone.</h1>
+      <p class="sub">Create a timeless family portrait designed to become part of your family's story for generations.</p>
+      <p>Experience a private, luxury portrait session at our Portsmouth studio, where your family is photographed with intention and your portraits are created as heirloom artwork for your home.</p>
+      <p style="margin-top:34px"><a class="btn" href="#apply">Apply for your portrait session</a></p>
+      <div class="meta">Portsmouth, NH &nbsp;&middot;&nbsp; Serving families since 2011</div>
+    </div>
+    <div class="col-img">
+      <div class="frame"><div class="frame-inner">
+        <img src="images/hero-family.jpg" alt="A family of four photographed in the Mallory Portraits studio">
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. THE YEARS ============ -->
+<section class="section section-light center">
+  <div class="wrap">
+    <div class="eyebrow">Why families come to us</div>
+    <h2>The years go by faster than we realize.</h2>
+    <div class="rule"></div>
+    <p class="lead">Children grow. Families change. Moments that feel ordinary today become the memories we treasure most tomorrow.</p>
+    <p>You may have thousands of photographs on your phone. How many of them will still be hanging on your walls twenty years from now?</p>
+    <p style="font-family:var(--display);font-size:26px;font-style:italic;line-height:1.5;margin-top:34px">
+      Not just a photo.<br>A portrait.<br>A piece of your family history.
+    </p>
+
+    <div class="stats">
+      <div class="stat"><div class="num">14,000+</div><div class="lbl">Families &amp; pets photographed</div></div>
+      <div class="stat"><div class="num">2011</div><div class="lbl">Creating heirlooms since</div></div>
+      <div class="stat"><div class="num">550+</div><div class="lbl">Five-star reviews</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. THE EXPERIENCE ============ -->
+<section class="section section-dark">
+  <div class="wrap">
+    <div class="center" style="margin-bottom:64px">
+      <div class="eyebrow">How it works</div>
+      <h2>A portrait experience designed around your family</h2>
+      <p style="margin-top:20px">This isn't a rushed photo session where you're handed a gallery and told to figure out what to do with it. Your experience is guided from start to finish.</p>
+    </div>
+    <div class="row-3">
+      <div class="step">
+        <span class="n">01 &mdash; Your session</span>
+        <h3>In the studio</h3>
+        <p>Join us at our private Portsmouth studio for a relaxed, professionally directed portrait session. Our photographers know how to work with families, young children, and all the unpredictable moments that come with them.</p>
+        <p class="pull">You don't need to know how to pose. We do.</p>
+      </div>
+      <div class="step">
+        <span class="n">02 &mdash; Your reveal</span>
+        <h3>Seeing them first</h3>
+        <p>See your portraits for the first time in our private viewing room and experience your family in a completely different way.</p>
+        <p class="pull">This is where photographs become artwork.</p>
+      </div>
+      <div class="step">
+        <span class="n">03 &mdash; Your artwork</span>
+        <h3>On your wall</h3>
+        <p>With the guidance of our Art Director, choose the portrait and presentation that belongs in your home. From timeless framed portraits to substantial custom pieces, each one is made to be enjoyed now and passed down later.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. GENERATIONS ============ -->
+<section class="section section-ivory">
+  <div class="wrap row-2 flip">
+    <div class="col-img">
+      <div class="frame"><div class="frame-inner">
+        <img src="images/generations.jpg" alt="Three generations of one family photographed together">
+      </div></div>
+      <div class="caption">Archival canvas &amp; custom framing</div>
+    </div>
+    <div>
+      <div class="eyebrow">Heirloom artwork</div>
+      <h2>Beautiful today. Meaningful for generations.</h2>
+      <p style="margin-top:22px">There is something different about seeing your family in a finished portrait on the wall. It becomes part of your home. Part of your children's childhood. Part of your family's history.</p>
+      <p>We specialize in fine art portraiture and heirloom-quality artwork, including archival canvas and custom-framed pieces crafted to last for generations.</p>
+      <p style="font-family:var(--display);font-size:23px;font-style:italic;line-height:1.5">Your family is worth more than a folder of digital files.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. GET IN THE FRAME ============ -->
+<section class="section section-dark">
+  <div class="wrap row-2">
+    <div>
+      <div class="eyebrow">A note for the one behind the camera</div>
+      <h2>Get in the frame.</h2>
+      <p style="margin-top:22px">So often, one person is missing from the family photographs. They're the one taking the picture. Behind the camera. Behind the phone. Behind everyone else.</p>
+      <p>This time, get in the frame. Let someone else preserve this chapter of your family's life while you simply enjoy being together.</p>
+      <p style="margin-top:32px"><a class="btn" href="#apply">Book your consultation</a></p>
+    </div>
+    <div class="col-img">
+      <div class="frame"><div class="frame-inner">
+        <img src="images/get-in-the-frame.jpg" alt="Parents lifting their baby during a portrait session">
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. GALLERY ============ -->
+<section class="section section-light center">
+  <div class="wrap">
+    <div class="eyebrow">Recent portraits</div>
+    <h2>Every family has a different story</h2>
+    <div class="rule"></div>
+    <div class="gallery">
+      <div class="frame"><div class="frame-inner"><img src="images/gallery-01-extended.jpg" alt="A large extended family portrait"></div></div>
+      <div class="frame"><div class="frame-inner"><img src="images/gallery-03-trio.jpg" alt="A family of three in the studio"></div></div>
+      <div class="frame"><div class="frame-inner"><img src="images/gallery-04-siblings.jpg" alt="Two young siblings on a velvet chair"></div></div>
+      <div class="frame"><div class="frame-inner"><img src="images/gallery-05-holiday.jpg" alt="A family of four with two young children"></div></div>
+      <div class="frame"><div class="frame-inner"><img src="images/gallery-02-heritage.jpg" alt="A large family photographed in traditional dress"></div></div>
+      <div class="frame"><div class="frame-inner"><img src="images/gallery-06-denim.jpg" alt="Parents with their baby daughter"></div></div>
+      <div class="frame"><div class="frame-inner"><img src="images/gallery-08-twirl.jpg" alt="A young girl in an embroidered dress"></div></div>
+      <div class="frame"><div class="frame-inner"><img src="images/gallery-07-baby.jpg" alt="A baby girl seated in the studio"></div></div>
+      <div class="frame"><div class="frame-inner"><img src="images/gallery-09-family.jpg" alt="A family of three photographed together"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. REVIEWS ============ -->
+<section class="section section-ivory">
+  <div class="wrap">
+    <div class="center" style="margin-bottom:58px">
+      <div class="eyebrow">550+ five-star reviews</div>
+      <h2>Trusted by families across New England</h2>
+    </div>
+    <div class="row-3">
+      <div class="review">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <q>We could not be happier with our family portrait. It is the centerpiece of our home and we anticipate it becoming a treasured family heirloom.</q>
+        <div class="who">Ilya S.</div>
+      </div>
+      <div class="review">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <q>Very professional, a really nice studio and great quality portraits that will no doubt be handed down to the next generation.</q>
+        <div class="who">Silas P.</div>
+      </div>
+      <div class="review">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <q>Excellent customer service. The photographer was great with my two year old daughter who was being very fussy. They took the time to clearly explain the whole process.</q>
+        <div class="who">Katelyn T.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 8. CTA + FORM ============ -->
+<section class="section section-dark center" id="apply">
+  <div class="wrap">
+    <div class="eyebrow">An invitation</div>
+    <h2>Your family will never be exactly this age again.</h2>
+    <div class="rule"></div>
+    <p class="lead">Every family is different, and so is every portrait experience. Tell us about yours and we'll walk you through the process, answer your questions, and help you discover what's possible.</p>
+
+    <form class="form-card" id="consultForm" action="thank-you.html" method="get">
+      <div class="two">
+        <div class="field">
+          <label for="first">First name</label>
+          <input type="text" id="first" name="first_name" required>
+        </div>
+        <div class="field">
+          <label for="last">Last name</label>
+          <input type="text" id="last" name="last_name" required>
+        </div>
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="field">
+        <label for="phone">Phone number</label>
+        <input type="tel" id="phone" name="phone" required>
+      </div>
+      <button class="btn" type="submit">Request your consultation</button>
+      <p class="note center">Spaces are limited. Sessions are available by appointment.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="brand">Mallory Portraits<span>Heirloom family portraiture</span></div>
+    <p>110 Brewery Lane, Suite 101, Portsmouth, NH 03801</p>
+    <p><a href="tel:16035702600">603-570-2600</a></p>
+    <div class="credit">Built by Builders of Authority</div>
+  </div>
+</footer>
+
+</body>
+</html>
